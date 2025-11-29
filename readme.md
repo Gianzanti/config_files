@@ -38,5 +38,5 @@ rm JetBrainsMono.zip
 
 ## copy the kitty.conf file
 ```bash
-curl -L -o ~/.config/kitty/kitty.conf https://github.com/Gianzanti/config_files/blob/main/kitty.conf
+curl -LJ -o ~/.config/kitty/kitty.conf https://raw.githubusercontent.com/Gianzanti/config_files/refs/heads/main/kitty.conf
 ```
