@@ -27,3 +27,15 @@ sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.loca
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 ```
 
+## install jetbrains nerd font
+```bash
+curl -O https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+# mkdir ~/.fonts
+unzip JetBrainsMono.zip -d ~/.fonts
+fc-cache -fv
+```
+
+## copy the kitty.conf file
+```bash
+curl -o /path/to/your/folder/newfilename.extension http://example.com/originalfile.extension
+```
