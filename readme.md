@@ -33,9 +33,10 @@ curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetB
 # mkdir ~/.fonts
 unzip JetBrainsMono.zip -d ~/.fonts
 fc-cache -fv
+rm JetBrainsMono.zip
 ```
 
 ## copy the kitty.conf file
 ```bash
-curl -L-o ~/.config/kitty https://github.com/Gianzanti/config_files/blob/main/kitty.conf
+curl -L -o ~/.config/kitty/kitty.conf https://github.com/Gianzanti/config_files/blob/main/kitty.conf
 ```
