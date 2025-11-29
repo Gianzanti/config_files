@@ -1,23 +1,26 @@
-# tasks after install ubuntu
+# After Ubunty Fresh Install (25.10)
 
-## update OS
+## Update OS
 ```bash
 sudo apt update
 sudo apt upgrade
 sudo apt autoremove
 ```
 
-## install curl
+## Install curl
 ```bash
 sudo apt install curl
 ```
+--- 
 
-## install kitty
+## Install Kitty Terminal
+
+### Download and install it
 ```bash
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
-## integrate kitty to the desktop
+### Integrate kitty to the desktop
 ```bash
 ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
 cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
@@ -27,16 +30,40 @@ sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.loca
 echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 ```
 
-## install jetbrains nerd font
+### Install jetbrains nerd font
 ```bash
 curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-# mkdir ~/.fonts
 unzip JetBrainsMono.zip -d ~/.fonts
 fc-cache -fv
 rm JetBrainsMono.zip
 ```
 
-## copy the kitty.conf file
+### Copy the config file
 ```bash
 curl -LJ -o ~/.config/kitty/kitty.conf https://raw.githubusercontent.com/Gianzanti/config_files/refs/heads/main/kitty.conf
+kill -SIGUSR1 $(pgrep kitty)
+```
+---
+## Install ZSH
+```bash
+sudo apt install zsh -y
+```
+---
+## Install Oh My Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+---
+
+## Install Starship
+
+### Download and install it
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
+### Copy the config file
+```bash
+curl -LJ -o ~/.config/starship.toml https://raw.githubusercontent.com/Gianzanti/config_files/refs/heads/main/starship.toml
+kill -SIGUSR1 $(pgrep kitty)
 ```
