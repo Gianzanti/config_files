@@ -37,5 +37,5 @@ fc-cache -fv
 
 ## copy the kitty.conf file
 ```bash
-curl -o /path/to/your/folder/newfilename.extension http://example.com/originalfile.extension
+curl -o ~/.config/kitty https://github.com/Gianzanti/config_files/blob/main/kitty.conf
 ```
