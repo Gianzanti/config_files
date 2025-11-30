@@ -7,9 +7,9 @@ sudo apt upgrade
 sudo apt autoremove
 ```
 
-## Install curl
+## Install utilities
 ```bash
-sudo apt install curl
+sudo apt install curl git eza bat zoxide
 ```
 --- 
 
@@ -47,14 +47,22 @@ kill -SIGUSR1 $(pgrep kitty)
 ## Install ZSH
 ```bash
 sudo apt install zsh -y
+chsh -s $(which zsh)
 ```
 ---
 ## Install Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
----
 
+## Install Oh My Zsh Plugins
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
+```
+
+---
 ## Install Starship
 
 ### Download and install it
@@ -66,4 +74,20 @@ curl -sS https://starship.rs/install.sh | sh
 ```bash
 curl -LJ -o ~/.config/starship.toml https://raw.githubusercontent.com/Gianzanti/config_files/refs/heads/main/starship.toml
 kill -SIGUSR1 $(pgrep kitty)
+```
+
+## Copy zshrc
+```bash
+curl -LJ -o ~/.zshrc https://raw.githubusercontent.com/Gianzanti/config_files/refs/heads/main/.zshrc
+```
+
+---
+## Install Neovim
+
+### Install necessary packages
+```bash
+sudo apt install software-properties-common build-essential
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
 ```
